@@ -1,0 +1,58 @@
+body{
+    margin: 0px auto;
+    max-width: 1120px;
+    background: #F1F1F1;
+}
+
+/* padding: 0px 160px; */
+
+*, *::after, *::before{    
+    box-sizing: border-box;
+}
+
+/* Section medium-alike start */
+.medium-alike{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 24px 160px;
+    width: auto;
+    height: 70px;
+}
+
+.medium-alike p{
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    text-transform: lowercase;
+    color: #000000;
+}
+/* Section medium-alike end */
+
+/* Section hello-world start */
+
+.hello-world{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 64px 160px;
+    width: auto;
+    height: 248px;
+}
+
+.hello-world h1{
+    width: auto;
+    height: 120px;
+    font-family: 'Kanit';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120px;
+    color: #000000;
+}
+
+
+
+/* Section hello-world end */
