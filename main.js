@@ -40,5 +40,11 @@ let array = [
     }
 ]
 
+const articlesDiv = document.getElementsByClassName("articles")
+console.log(articlesDiv)
+array.map((item)=>{
+    const html = ``
+})
+
 
 
