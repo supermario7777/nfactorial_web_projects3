@@ -32,7 +32,6 @@ body{
 /* Section medium-alike end */
 
 /* Section hello-world start */
-
 .hello-world{
     display: flex;
     justify-content: flex-start;
@@ -52,7 +51,142 @@ body{
     line-height: 120px;
     color: #000000;
 }
-
-
-
 /* Section hello-world end */
+
+/* Section news start */
+
+#news{
+    display: flex;
+    flex-direction: column;
+    padding: 0px 160px;
+}
+
+.articles{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-around; */
+    margin-bottom: 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.images{
+    width: 265px;
+    height: 265px;
+    border-radius: 4px;
+}
+
+.top, .bottom{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 90%;
+    gap: 5px;
+}
+
+.bottom{    
+    margin-bottom: 50px;
+}
+
+.middle{
+    width: 90%;
+}
+
+.author{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.in{font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;    
+    opacity: 0.5;
+}
+
+.topic_name{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+}
+
+.published_date{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    opacity: 0.5;
+}
+
+.title{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    color: #000000;
+}
+
+.short_desc{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.theme{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 16px;
+    gap: 8px;
+    width: 107px;
+    height: 30px;
+    background: linear-gradient(0deg, rgba(8, 30, 52, 0.12), rgba(8, 30, 52, 0.12)), #FFFBFE;
+    border-radius: 100px;
+    border: none;
+    white-space: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #081E34;
+}
+
+.time_over{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;    
+    opacity: 0.5;
+}
+
+.select{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    opacity: 0.5;
+    margin-left: 8px;
+}
+
+/* Section news end */
