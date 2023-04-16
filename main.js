@@ -63,7 +63,7 @@ articles.map((item) => {
                 </div>
             </div>
             <div class="images">
-                <img src="images/0.png" alt="image0">
+                <img src="${item.image}" alt="#">
             </div>
             <div class="border"></div>
         </div>`;       
