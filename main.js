@@ -1,47 +1,85 @@
-// 'use strict'
+'use strict'
+
+// Date object
+// const date = new Date();
+// let currentDay= String(date.getDate()).padStart(2, '0');
+// let currentMonth = String(date.getMonth()+1).padStart(2,"0");
+// let currentYear = date.getFullYear();
+// let currentDate = `${currentYear}-${currentMonth}-${currentDay}`;
+
+// let time = Date.now()
+// console.log(time);
+
+let arrContainer = [];
+
+fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=BJCEDkz8SZFeHH5feN5WS9DxPzz3R1aC')
+.then((response) => response.json())
+.then((data) => {
+    data.results.splice(0,3).forEach(element => {
+        let article ={
+            author: element.byline ,
+            topic_name: "Some text",
+            published_date: element.published_date,
+            title: element.title,
+            short_desc: element.abstract,
+            theme: element.section,
+            time_over: "15 min",
+            select: "selected for you",
+            image: element.media[0]["media-metadata"][0].url
+        }
+
+        arrContainer.push(article)
+
+    });
+})
+.catch((e) => console.log(e))
+
+console.log(arrContainer)
 
 // creating an array
-let articles = [
-    {
-        author: "Gulien",
-        topic_name: "cats",
-        published_date: "5 March",
-        title: "The most beautiful cats",
-        short_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
-        theme: "Animals",
-        time_over: "15 min",
-        select: "selected for you",
-        image: "images/0.png"
+// let articles = [
+//     {
+//         author: "Gulien",
+//         topic_name: "cats",
+//         published_date: "5 March",
+//         title: "The most beautiful cats",
+//         short_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+//         theme: "Animals",
+//         time_over: "15 min",
+//         select: "selected for you",
+//         image: "images/0.png"
 
-    },
-    {
-        author: "Myiosh",
-        topic_name: "dogs",
-        published_date: "7 February",
-        title: "The most beautiful dogs",
-        short_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
-        theme: "hunters",
-        time_over: "25 min",
-        select: "selected for miosh",
-        image: "images/1.png"
+//     },
+//     {
+//         author: "Myiosh",
+//         topic_name: "dogs",
+//         published_date: "7 February",
+//         title: "The most beautiful dogs",
+//         short_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+//         theme: "hunters",
+//         time_over: "25 min",
+//         select: "selected for miosh",
+//         image: "images/1.png"
 
-    },
-    {
-        author: "Relon",
-        topic_name: "snakes",
-        published_date: "8 May",
-        title: "The most beautiful snakes",
-        short_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
-        theme: "Animals",
-        time_over: "35 min",
-        select: "selected for relon",
-        image: "images/2.png"
+//     },
+//     {
+//         author: "Relon",
+//         topic_name: "snakes",
+//         published_date: "8 May",
+//         title: "The most beautiful snakes",
+//         short_desc: "Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups.",
+//         theme: "Animals",
+//         time_over: "35 min",
+//         select: "selected for relon",
+//         image: "images/2.png"
 
-    },
-];
+//     },
+// ];
+
+let articles = arrContainer
+console.log(articles)
 
 const newsSection = document.getElementById("news")
-console.log(newsSection)
 articles.map((item) => {
     const html = `
         <div class="articles">
