@@ -17,7 +17,7 @@ const newsSection = document.getElementById("news")
 fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=BJCEDkz8SZFeHH5feN5WS9DxPzz3R1aC')
 .then((response) => response.json())
 .then((data) => {
-    data.results.splice(1,3).forEach(element => {
+    data.results.splice(1,10).forEach(element => {
 
         console.log(element)
         
@@ -32,7 +32,7 @@ fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key
                     <p class="published_date">${element.published_date}</p>
                 </div>
                 <div class="middle">                    
-                    <h2 class="title">${element.title}</h2>
+                    <a href="#" class="title">${element.title}</a>
                     <p class="short_desc">${element.abstract}</p>
                 </div>
                 <div class="bottom">
