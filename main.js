@@ -12,29 +12,60 @@
 
 let arrContainer = [];
 
+const newsSection = document.getElementById("news")
+
 fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=BJCEDkz8SZFeHH5feN5WS9DxPzz3R1aC')
 .then((response) => response.json())
 .then((data) => {
-    data.results.splice(0,3).forEach(element => {
-        let article ={
-            author: element.byline ,
-            topic_name: "Some text",
-            published_date: element.published_date,
-            title: element.title,
-            short_desc: element.abstract,
-            theme: element.section,
-            time_over: "15 min",
-            select: "selected for you",
-            image: element.media[0]["media-metadata"][0].url
-        }
+    data.results.splice(1,3).forEach(element => {
 
-        arrContainer.push(article)
+        console.log(element)
+        
+        let someArr = element.media[0]["media-metadata"];
+        const html = `
+        <div class="articles">
+            <div class="header">
+                <div class="top">
+                    <p class="author">${element.byline}</p>
+                    <p class="in">in</p>
+                    <p class="topic_name">"Some text"</p>
+                    <p class="published_date">${element.published_date}</p>
+                </div>
+                <div class="middle">                    
+                    <h2 class="title">${element.title}</h2>
+                    <p class="short_desc">${element.abstract}</p>
+                </div>
+                <div class="bottom">
+                    <button class="theme">${element.section}</button>                
+                    <p class="time_over">"15 min"</p>
+                    <li class="select">"selected for you"</li>
+                </div>
+            </div>
+            <div class="images">
+                <img src="${someArr[1]["url"]}" alt="#">
+            </div>
+            <div class="border"></div>
+        </div>`;       
+
+        newsSection.innerHTML += html;
+        // let article ={
+        //     "author": element.byline ,
+        //     "topic_name": "Some text",
+        //     "published_date": element.published_date,
+        //     "title": element.title,
+        //     "short_desc": element.abstract,
+        //     "theme": element.section,
+        //     "time_over": "15 min",
+        //     "select": "selected for you",
+        //     image: someArr[0]["url"],
+        // }
+        // arrContainer.push(article)
 
     });
 })
-.catch((e) => console.log(e))
+.catch(e => {e})
 
-console.log(arrContainer)
+// console.log(arrContainer)
 
 // creating an array
 // let articles = [
@@ -76,38 +107,42 @@ console.log(arrContainer)
 //     },
 // ];
 
-let articles = arrContainer
-console.log(articles)
 
-const newsSection = document.getElementById("news")
-articles.map((item) => {
-    const html = `
-        <div class="articles">
-            <div class="header">
-                <div class="top">
-                    <p class="author">${item.author}</p>
-                    <p class="in">in</p>
-                    <p class="topic_name">${item.topic_name}</p>
-                    <p class="published_date">${item.published_date}</p>
-                </div>
-                <div class="middle">                    
-                    <h2 class="title">${item.title}</h2>
-                    <p class="short_desc">${item.short_desc}</p>
-                </div>
-                <div class="bottom">
-                    <button class="theme">${item.theme}</button>                
-                    <p class="time_over">${item.time_over}</p>
-                    <li class="select">${item.select}</li>
-                </div>
-            </div>
-            <div class="images">
-                <img src="${item.image}" alt="#">
-            </div>
-            <div class="border"></div>
-        </div>`;       
+// console.log(articles)
 
-        newsSection.innerHTML += html;
-})
+
+// arrContainer.map((item) => {
+//     const html = `
+//         <div class="articles">
+//             <div class="header">
+//                 <div class="top">
+//                     <p class="author">${item.author}</p>
+//                     <p class="in">in</p>
+//                     <p class="topic_name">${item.topic_name}</p>
+//                     <p class="published_date">${item.published_date}</p>
+//                 </div>
+//                 <div class="middle">                    
+//                     <h2 class="title">${item.title}</h2>
+//                     <p class="short_desc">${item.short_desc}</p>
+//                 </div>
+//                 <div class="bottom">
+//                     <button class="theme">${item.theme}</button>                
+//                     <p class="time_over">${item.time_over}</p>
+//                     <li class="select">${item.select}</li>
+//                 </div>
+//             </div>
+//             <div class="images">
+//                 <img src="${item.image}" alt="#">
+//             </div>
+//             <div class="border"></div>
+//         </div>`;       
+
+//         newsSection.innerHTML += html;
+// })
+
+
+
+
 
 
 

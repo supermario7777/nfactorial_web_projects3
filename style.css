@@ -69,10 +69,16 @@ body{
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.images{
-    width: 265px;
-    height: 265px;
+.images img{
+    width: 346px;
+    height: 253px;
     border-radius: 4px;
+}
+
+.images{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .top, .bottom{
