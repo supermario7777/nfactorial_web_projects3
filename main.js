@@ -29,7 +29,7 @@ fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key
                     <p class="published_date">${element.published_date}</p>
                 </div>
                 <div class="middle">                    
-                    <a href="#" class="title">${element.title}</a>
+                    <a onclick="openArticle()" class="title">${element.title}</a>
                     <p class="short_desc">${element.abstract}</p>
                 </div>
                 <div class="bottom">
@@ -48,4 +48,24 @@ fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key
 
     });
 })
-.catch(e => {e})
+.catch((error) => {console.log(error)})
+
+function openArticle(){
+    console.log(document.location.href = "http://127.0.0.1:5500/second.html")
+    document.body.innerHTML = `
+    <section class="medium-alike">
+        <p>Medium Alike</p>
+    </section>
+
+    <section class="return-back">
+        <h1>Hello, world!</h1>
+    </section>
+
+    <section id="news">
+    </section>
+    <script src="main.js"></script>`
+
+}
+
+console.log()
+
