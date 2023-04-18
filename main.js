@@ -69,3 +69,21 @@ function openArticle(){
 
 console.log()
 
+
+function returnToMainPage(){
+    console.log(document.location.href = "http://127.0.0.1:5500/index.html")
+    document.body.innerHTML = `
+    <section class="medium-alike">
+        <p>Medium Alike</p>
+    </section>
+
+    <section class="return-back">
+        <h1>Hello, world!</h1>
+    </section>
+
+    <section id="news">
+    </section>
+    <script src="main.js"></script>`
+
+}
+
