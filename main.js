@@ -17,7 +17,8 @@ const newsSection = document.getElementById("news")
 fetch('https://api.nytimes.com/svc/mostpopular/v2/shared/1/facebook.json?api-key=BJCEDkz8SZFeHH5feN5WS9DxPzz3R1aC')
 .then((response) => response.json())
 .then((data) => {
-    data.results.splice(1,10).forEach(element => {      
+    data.results.splice(1,3).forEach(element => { 
+        console.log(element)     
         let someArr = element.media[0]["media-metadata"];
         const html = `
         <div class="articles">
